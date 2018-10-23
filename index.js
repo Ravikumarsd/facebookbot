@@ -1,6 +1,7 @@
 'use strict'
 
-const token = process.env.FB_PAGE_ACCESS_TOKEN
+//tokens are stored in heroku
+const token = process.env.FB_PAGE_ACCESS_TOKEN          
 const vtoken = process.env.FB_VERIFY_ACCESS_TOKEN
 
 const express = require('express')
