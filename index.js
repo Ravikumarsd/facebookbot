@@ -10,3 +10,14 @@ const express = require('express'),
     app.get('/',function(req, res) {
         res.send("Hello Heroku")
     })
+
+    app.get('/webhook', function(req,res){
+        if(req.query['hub.verify_token'] === "hello") {
+            res.send(req.query['hub.challenge'])
+        }
+        res.send('No entry')
+    })
+
+    app.listen(app.get('port'),function(){
+        console.log('running on port', app.get('port'))
+    })
